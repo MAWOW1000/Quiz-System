@@ -5,17 +5,18 @@ import { deleteUser } from '../../../../services/apiService';
 import { Bounce, toast } from 'react-toastify';
 
 function ModalDeleteUser(props) {
-  const { show, handleClose, fetchAllUsers, userClick } = props;
+  const { setPage, show, handleClose, fetchAllUsers, userClick } = props;
   const handleDelete = async () => {
     try {
       const data = await deleteUser(userClick.id);
       if (data && data.EC === 0) {
+        setPage(1);
         toast.success(data.EM);
       }
-      if (data && data.EC > 0) {
+      if (data && data.EC !== 0) {
         toast.error(data.EM);
       }
-      await fetchAllUsers();
+      await fetchAllUsers(true);
       handleClose(!show)
     } catch (e) {
       toast.error("Internal Server Error");

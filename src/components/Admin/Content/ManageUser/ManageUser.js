@@ -54,12 +54,12 @@ function ManageUser() {
             <div className="manageUser__content">
                 <button onClick={() => { setShowModal(!showModal) }} className="btn btn-primary addUserBtn">Add new user</button>
                 <div className="tableUser">
-                    <TableUserPaginate totalPage={totalPage} setUserClick={setUserClick} setShowModalUpdate={setShowModalUpdate} setShowModalDelete={setShowModalDelete} listUser={listUser} setPage={setPage} />
+                    <TableUserPaginate page={page} totalPage={totalPage} setUserClick={setUserClick} setShowModalUpdate={setShowModalUpdate} setShowModalDelete={setShowModalDelete} listUser={listUser} setPage={setPage} />
                 </div>
             </div>
-            <ModalCreateUser fetchAllUsers={fetchAllUsersPaginate} show={showModal} handleClose={setShowModal} />
+            <ModalCreateUser setPage={setPage} fetchAllUsers={fetchAllUsersPaginate} show={showModal} handleClose={setShowModal} />
             <ModalUpdateUser show={showModalUpdate} handleClose={setShowModalUpdate} fetchAllUsers={fetchAllUsersPaginate} userClick={userClick} />
-            <ModalDeleteUser show={showModalDelete} handleClose={setShowModalDelete} fetchAllUsers={fetchAllUsersPaginate} userClick={userClick} />
+            <ModalDeleteUser setPage={setPage} show={showModalDelete} handleClose={setShowModalDelete} fetchAllUsers={fetchAllUsersPaginate} userClick={userClick} />
         </>
 
     );

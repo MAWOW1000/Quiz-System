@@ -1,9 +1,9 @@
 import ReactPaginate from 'react-paginate';
 
 function TableUserPaginate(props) {
-    const { totalPage, setPage, listUser, setShowModalUpdate, setUserClick, setShowModalDelete } = props
+    const {totalPage, setPage, listUser, setShowModalUpdate, setUserClick, setShowModalDelete } = props
     const handlePageClick = (selected) => {
-        return setPage(+selected.selected + 1)
+        setPage(+selected.selected + 1)
     }
     return (
         <>
@@ -59,6 +59,7 @@ function TableUserPaginate(props) {
                 containerClassName="pagination"
                 activeClassName="active"
                 renderOnZeroPageCount={null}
+                forcePage={props.page -1}
             />
         </>
     );

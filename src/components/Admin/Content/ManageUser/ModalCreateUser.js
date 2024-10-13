@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { postCreateUser } from '../../../../services/apiService';
 
 function ModalCreateUser(props) {
-  const { show, handleClose, fetchAllUsers } = props;
+  const {setPage, show, handleClose, fetchAllUsers } = props;
 
   const handleCloseNew = () => {
     handleClose(!show);
@@ -16,7 +16,7 @@ function ModalCreateUser(props) {
     setPassword('')
     setUsername('')
     setRole('')
-    setImage('')
+    setImage('') 
     setPreviewImage(false)
   }
   const [email, setEmail] = useState("");
@@ -71,6 +71,7 @@ function ModalCreateUser(props) {
     //submit form
     const data = await postCreateUser(email, password, username, role, image)
     if (data && data.EC === 0) {
+      setPage(1);
       toast.success(data.EM, {
         position: "top-right",
         autoClose: 5000,
