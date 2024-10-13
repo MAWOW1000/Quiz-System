@@ -1,0 +1,26 @@
+.adminContainer {
+    display: flex;
+
+    .sidebar {
+        height: 100vh;
+
+        .pro-sidebar .pro-menu {
+            padding: 0;
+        }
+    }
+
+    .main {
+        flex: 1;
+
+        .mainHeader {
+            border: 1px solid blue;
+        }
+
+        .mainContent {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 16px;
+        }
+    }
+}

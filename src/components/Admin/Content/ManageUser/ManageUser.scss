@@ -1,0 +1,21 @@
+.manageUser__header{
+    .title{
+        font-size: 30px;
+    }
+}
+
+.manageUser__content{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .addUserBtn{
+        width: 130px;
+    }
+
+    .tableUser{
+        .pagination{
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.modalCreateUser {
+    .addImage {
+        display: flex;
+        gap: 5px;
+        background-color: #e2e2e2;
+        width: 130px;
+        border-radius: 5px;
+        padding: 5px 10px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .previewImage {
+        border: 1px dotted #ccc !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        color: #aaaaaa;
+
+        .image {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .modalCreateUser__form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modalCreateUser__body {
+        margin-bottom: 10px;
+    }
+}
